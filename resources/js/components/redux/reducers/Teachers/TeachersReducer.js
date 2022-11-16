@@ -21,7 +21,9 @@ const initialState = {
             class_leader: '',
             photo_id: 3
         }
-    ]
+    ],
+
+    teachersImagesDir: 2
 }
 
 export const teachersReducer = (state = initialState, action) => {
