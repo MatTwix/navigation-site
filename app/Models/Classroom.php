@@ -12,7 +12,8 @@ class Classroom extends Model
     protected $fillable = [
         'name',
         'number',
-        'way_to'
+        'way_to',
+        'owner_id'
     ];
 
     public function images() {
@@ -21,5 +22,9 @@ class Classroom extends Model
 
     public function subjects() {
         return $this->belongsToMany(Subject::class);
+    }
+
+    public function teacher() {
+        return $this->belongsTo(Teacher::class);
     }
 }
