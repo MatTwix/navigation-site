@@ -28,7 +28,7 @@ const ClassesPage = () => {
                                 return (
                                     <img src={makePath(classroom.destination, photoId)} alt="photo"/>
                                 )
-                            })
+                            }) 
                             } </div>
                         }
                         <Link to={`/classes/${classroom.id}`}>Watch more</Link>

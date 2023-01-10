@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ClassroomsController as AdminClassroomsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('.');
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
+    Route::resource('/classrooms', AdminClassroomsController::class);
+});
 
 Route::any('{any}', function () {
     return view('welcome');

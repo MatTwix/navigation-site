@@ -23663,7 +23663,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "classesReducer": () => (/* binding */ classesReducer)
 /* harmony export */ });
-// owner_id is teacher id from teachers table
+// owner_id is teacher's id from teachers table
 
 var initialState = {
   classes: [{

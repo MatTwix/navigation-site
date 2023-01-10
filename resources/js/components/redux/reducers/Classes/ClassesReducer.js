@@ -1,4 +1,4 @@
-// owner_id is teacher id from teachers table
+// owner_id is teacher's id from teachers table
 
 const initialState = {
     classes: [
