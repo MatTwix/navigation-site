@@ -1,0 +1,1 @@
+export const subjectsList = state => state.subjects.subjects

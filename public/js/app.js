@@ -22891,18 +22891,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/NotFoundPage */ "./resources/js/components/pages/NotFoundPage.js");
-/* harmony import */ var _pages_HomePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/HomePage */ "./resources/js/components/pages/HomePage.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/components/Layout.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/NotFoundPage */ "./resources/js/components/pages/NotFoundPage.jsx");
+/* harmony import */ var _pages_HomePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/HomePage */ "./resources/js/components/pages/HomePage.jsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/components/Layout.jsx");
 /* harmony import */ var _templates_assets_css_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../templates/assets/css/style.css */ "./templates/assets/css/style.css");
-/* harmony import */ var _pages_ClassesPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/ClassesPage */ "./resources/js/components/pages/ClassesPage.js");
-/* harmony import */ var _pages_TeachersPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/TeachersPage */ "./resources/js/components/pages/TeachersPage.js");
-/* harmony import */ var _pages_ClassPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/ClassPage */ "./resources/js/components/pages/ClassPage.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_store_configureStore__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./redux/store/configureStore */ "./resources/js/components/redux/store/configureStore.js");
-/* harmony import */ var _pages_TeacherPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/TeacherPage */ "./resources/js/components/pages/TeacherPage.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_ClassesPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/ClassesPage */ "./resources/js/components/pages/ClassesPage.jsx");
+/* harmony import */ var _pages_ClassPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/ClassPage */ "./resources/js/components/pages/ClassPage.jsx");
+/* harmony import */ var _pages_TeachersPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/TeachersPage */ "./resources/js/components/pages/TeachersPage.jsx");
+/* harmony import */ var _pages_TeacherPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/TeacherPage */ "./resources/js/components/pages/TeacherPage.jsx");
+/* harmony import */ var _pages_SubjectsPage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/SubjectsPage */ "./resources/js/components/pages/SubjectsPage.jsx");
+/* harmony import */ var _pages_SubjectPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/SubjectPage */ "./resources/js/components/pages/SubjectPage.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_store_configureStore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./redux/store/configureStore */ "./resources/js/components/redux/store/configureStore.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -22918,30 +22922,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_8__.Provider, {
-    store: _redux_store_configureStore__WEBPACK_IMPORTED_MODULE_9__.store,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Routes, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_11__.Provider, {
+    store: _redux_store_configureStore__WEBPACK_IMPORTED_MODULE_12__.store,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Routes, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
         path: '/',
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {}),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {}),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           index: true,
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: '/classes',
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_ClassesPage__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_ClassesPage__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: '/classes/:id',
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_ClassPage__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_ClassPage__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: '/teachers',
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_TeachersPage__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_TeachersPage__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: '/teachers/:id',
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_TeacherPage__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_TeacherPage__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          path: '/subjects',
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_SubjectsPage__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          path: '/subjects/:id',
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_SubjectPage__WEBPACK_IMPORTED_MODULE_10__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: '*',
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_NotFoundPage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         })]
       })
     })
@@ -23025,10 +23035,10 @@ if (document.getElementById('user')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/components/Layout.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/components/Layout.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/components/Layout.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/components/Layout.jsx ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23199,6 +23209,23 @@ var Layout = function Layout() {
                         children: "Teachers"
                       })
                     })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                    sx: {
+                      my: 2,
+                      color: 'white',
+                      display: 'block'
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                      to: '/subjects',
+                      className: 'link',
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                        sx: {
+                          color: 'black'
+                        },
+                        underline: "none",
+                        children: "Subjects"
+                      })
+                    })
                   })]
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
@@ -23273,6 +23300,23 @@ var Layout = function Layout() {
                     children: "Teachers"
                   })
                 })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
+                sx: {
+                  my: 2,
+                  color: 'white',
+                  display: 'block'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                  to: '/subjects',
+                  className: 'link',
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                    sx: {
+                      color: 'white'
+                    },
+                    underline: "none",
+                    children: "Subjects"
+                  })
+                })
               })]
             })]
           })
@@ -23323,10 +23367,10 @@ var Layout = function Layout() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/ClassPage.js":
-/*!****************************************************!*\
-  !*** ./resources/js/components/pages/ClassPage.js ***!
-  \****************************************************/
+/***/ "./resources/js/components/pages/ClassPage.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/pages/ClassPage.jsx ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23399,10 +23443,10 @@ var ClassPage = function ClassPage() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/ClassesPage.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/pages/ClassesPage.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/pages/ClassesPage.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/pages/ClassesPage.jsx ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23489,10 +23533,10 @@ var ClassesPage = function ClassesPage() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/HomePage.js":
-/*!***************************************************!*\
-  !*** ./resources/js/components/pages/HomePage.js ***!
-  \***************************************************/
+/***/ "./resources/js/components/pages/HomePage.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/components/pages/HomePage.jsx ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23516,10 +23560,10 @@ var HomePage = function HomePage() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/NotFoundPage.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/pages/NotFoundPage.js ***!
-  \*******************************************************/
+/***/ "./resources/js/components/pages/NotFoundPage.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/pages/NotFoundPage.jsx ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23540,10 +23584,91 @@ var NotFoundPage = function NotFoundPage() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/TeacherPage.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/pages/TeacherPage.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/pages/SubjectPage.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/pages/SubjectPage.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _redux_reducers_Subjects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/reducers/Subjects */ "./resources/js/components/redux/reducers/Subjects/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var SubjectPage = function SubjectPage() {
+  var params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
+  var subject_id = +params.id;
+  var subjectsList = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(_redux_reducers_Subjects__WEBPACK_IMPORTED_MODULE_2__.subjectsSelectors.subjectsList);
+  var subject = subjectsList.find(function (item) {
+    return item.id === subject_id;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      children: subject.name
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SubjectPage);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/SubjectsPage.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/pages/SubjectsPage.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_reducers_Subjects_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/reducers/Subjects/index */ "./resources/js/components/redux/reducers/Subjects/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var SubjectsPage = function SubjectsPage() {
+  var subjectsList = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(_redux_reducers_Subjects_index__WEBPACK_IMPORTED_MODULE_2__.subjectsSelectors.subjectsList);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+      children: "Subjects"
+    }), subjectsList.map(function (subject) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          children: subject.name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/subjects/".concat(subject.id),
+          children: "Watch more"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {})]
+      }, subject.id);
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SubjectsPage);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/TeacherPage.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/pages/TeacherPage.jsx ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23601,10 +23726,10 @@ var TeacherPage = function TeacherPage() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/TeachersPage.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/pages/TeachersPage.js ***!
-  \*******************************************************/
+/***/ "./resources/js/components/pages/TeachersPage.jsx":
+/*!********************************************************!*\
+  !*** ./resources/js/components/pages/TeachersPage.jsx ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -23740,6 +23865,77 @@ var classesList = function classesList(state) {
 
 /***/ }),
 
+/***/ "./resources/js/components/redux/reducers/Subjects/SubjectsReducer.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/redux/reducers/Subjects/SubjectsReducer.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "subjectsReduser": () => (/* binding */ subjectsReduser)
+/* harmony export */ });
+var initialState = {
+  subjects: [{
+    id: 1,
+    name: 'Math'
+  }, {
+    id: 2,
+    name: 'Language'
+  }, {
+    id: 3,
+    name: 'Physics'
+  }, {
+    id: 4,
+    name: 'Bio'
+  }]
+};
+var subjectsReduser = function subjectsReduser() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/redux/reducers/Subjects/index.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/redux/reducers/Subjects/index.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "subjectsSelectors": () => (/* reexport module object */ _selectors__WEBPACK_IMPORTED_MODULE_0__)
+/* harmony export */ });
+/* harmony import */ var _selectors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./selectors */ "./resources/js/components/redux/reducers/Subjects/selectors.js");
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/redux/reducers/Subjects/selectors.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/redux/reducers/Subjects/selectors.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "subjectsList": () => (/* binding */ subjectsList)
+/* harmony export */ });
+var subjectsList = function subjectsList(state) {
+  return state.subjects.subjects;
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/redux/reducers/Teachers/TeachersReducer.js":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/redux/reducers/Teachers/TeachersReducer.js ***!
@@ -23833,17 +24029,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "store": () => (/* binding */ store)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _reducers_Classes_ClassesReducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reducers/Classes/ClassesReducer */ "./resources/js/components/redux/reducers/Classes/ClassesReducer.js");
-/* harmony import */ var _reducers_Teachers_TeachersReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/Teachers/TeachersReducer */ "./resources/js/components/redux/reducers/Teachers/TeachersReducer.js");
+/* harmony import */ var _reducers_Subjects_SubjectsReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/Subjects/SubjectsReducer */ "./resources/js/components/redux/reducers/Subjects/SubjectsReducer.js");
+/* harmony import */ var _reducers_Teachers_TeachersReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/Teachers/TeachersReducer */ "./resources/js/components/redux/reducers/Teachers/TeachersReducer.js");
 
 
 
-var reducer = (0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({
+
+var reducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
   classes: _reducers_Classes_ClassesReducer__WEBPACK_IMPORTED_MODULE_0__.classesReducer,
-  teachers: _reducers_Teachers_TeachersReducer__WEBPACK_IMPORTED_MODULE_1__.teachersReducer
+  teachers: _reducers_Teachers_TeachersReducer__WEBPACK_IMPORTED_MODULE_2__.teachersReducer,
+  subjects: _reducers_Subjects_SubjectsReducer__WEBPACK_IMPORTED_MODULE_1__.subjectsReduser
 });
-var store = (0,redux__WEBPACK_IMPORTED_MODULE_2__.createStore)(reducer);
+var store = (0,redux__WEBPACK_IMPORTED_MODULE_3__.createStore)(reducer);
 
 /***/ }),
 
@@ -48823,6 +49022,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/dashboard.css":
+/*!*************************************!*\
+  !*** ./resources/css/dashboard.css ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -93209,7 +93421,8 @@ function combine (array, callback) {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"css/app": 0,
+/******/ 			"css/dashboard": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -93264,8 +93477,9 @@ function combine (array, callback) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/css/dashboard.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
