@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class TeachersController extends Controller
@@ -14,7 +15,11 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::all();
+
+        return view('admin.teachers.index', [
+            'teachers' => $teachers
+        ]);
     }
 
     /**
@@ -24,7 +29,7 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teachers.create');
     }
 
     /**
@@ -35,7 +40,12 @@ class TeachersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('name', 'class_leader', 'photo_id');
+        $new_teacher = Teacher::create($data);
+
+        return $new_teacher 
+            ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -52,34 +62,43 @@ class TeachersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Teacher $teacher)
     {
-        //
+        return view('admin.teachers.edit', [
+            'teacher' => $teacher
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Teacher $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Teacher $teacher)
     {
-        //
+        $data = $request->only('name', 'class_leader', 'photo_id');
+        $updated_teacher = $teacher->fill($data)->save();
+
+        return $updated_teacher 
+            ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Teacher $teacher)
     {
-        //
+        return $teacher->delete() 
+            ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

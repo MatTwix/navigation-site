@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ClassroomsController as AdminClassroomsController;
+use App\Http\Controllers\Admin\TeachersController as AdminTeachersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/classrooms', AdminClassroomsController::class);
+    Route::resource('/teachers', AdminTeachersController::class);
 });
 
 Route::any('{any}', function () {

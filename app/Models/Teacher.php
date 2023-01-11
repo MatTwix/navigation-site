@@ -11,8 +11,8 @@ class Teacher extends Model
 
     protected $fillable = [
         'name',
-        'img_id',
-        'leader_of_class'
+        'photo_id',
+        'class_leader'
     ];
 
     public function subjects() {
