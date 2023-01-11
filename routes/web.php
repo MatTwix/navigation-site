@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ClassroomsController as AdminClassroomsController;
 use App\Http\Controllers\Admin\TeachersController as AdminTeachersController;
+use App\Http\Controllers\Admin\SubjectsController as AdminSubjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,10 @@ Route::get('/', function () {
 })->name('.');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
+    Route::view('/', 'admin.index')->name('index');
     Route::resource('/classrooms', AdminClassroomsController::class);
     Route::resource('/teachers', AdminTeachersController::class);
+    Route::resource('/subjects', AdminSubjectsController::class);
 });
 
 Route::any('{any}', function () {

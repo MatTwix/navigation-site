@@ -42,9 +42,9 @@ class ClassroomsController extends Controller
     public function store(Request $request)
     {
         $data = $request->only('name', 'number', 'way_to', 'owner_id');
-        $classroom = Classroom::create($data);
+        $new_classroom = Classroom::create($data);
 
-        return $classroom 
+        return $new_classroom 
             ? redirect()->route('admin.classrooms.index')->with('success', 'Запись успешно добавлена')
             : back()->withErrors('Не удалось добавить запись')->withInput();
     }
@@ -100,6 +100,6 @@ class ClassroomsController extends Controller
     {
         return $classroom->delete() 
             ? redirect()->route('admin.classrooms.index')->with('success', 'Запись успешно добавлена')
-            : back()->withErrors('Не удалось добавить запись');
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 }
