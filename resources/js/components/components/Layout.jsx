@@ -115,6 +115,12 @@ const Layout = () => {
                                             <Link to={'/teachers'} className={'link'}><LinkUi sx={{color: 'black'}}
                                                                            underline='none'>Teachers</LinkUi></Link>
                                         </ListItem>
+                                        <ListItem
+                                            sx={{my: 2, color: 'white', display: 'block'}}
+                                        >
+                                            <Link to={'/subjects'} className={'link'}><LinkUi sx={{color: 'black'}}
+                                                                           underline='none'>Subjects</LinkUi></Link>
+                                        </ListItem>
                                     </List>
                                 </Menu>
                                 <Link to={'/'} className={'link'}><LinkUi sx={{color: 'white', display: 'flex', alignItems: 'center'}}
@@ -149,6 +155,12 @@ const Layout = () => {
                                 >
                                     <Link to={'/teachers'} className={'link'}><LinkUi sx={{color: 'white'}}
                                                                    underline="none">Teachers</LinkUi></Link>
+                                </ListItem>
+                                <ListItem
+                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                >
+                                    <Link to={'/subjects'} className={'link'}><LinkUi sx={{color: 'white'}}
+                                                                   underline="none">Subjects</LinkUi></Link>
                                 </ListItem>
                             </List>
 

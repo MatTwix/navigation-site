@@ -5,11 +5,13 @@ import HomePage from "./pages/HomePage";
 import Layout from "./components/Layout";
 import '../../../templates/assets/css/style.css'
 import ClassesPage from "./pages/ClassesPage";
-import TeachersPage from "./pages/TeachersPage";
 import ClassPage from "./pages/ClassPage";
+import TeachersPage from "./pages/TeachersPage";
+import TeacherPage from "./pages/TeacherPage";
+import SubjectsPage from "./pages/SubjectsPage";
+import SubjectPage from "./pages/SubjectPage"
 import {Provider} from "react-redux";
 import {store} from "./redux/store/configureStore";
-import TeacherPage from "./pages/TeacherPage";
 
 const App = () => {
     return (
@@ -21,6 +23,8 @@ const App = () => {
                     <Route path={'/classes/:id'} element={<ClassPage />}/>
                     <Route path={'/teachers'} element={<TeachersPage />}/>
                     <Route path={'/teachers/:id'} element={<TeacherPage />}/>
+                    <Route path={'/subjects'} element={<SubjectsPage />}/>
+                    <Route path={'/subjects/:id'} element={<SubjectPage />}/>
                     <Route path={'*'} element={<NotFoundPage />}/>
                 </Route>
             </Routes>
