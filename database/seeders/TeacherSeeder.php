@@ -20,7 +20,7 @@ class TeacherSeeder extends Seeder
         DB::table('teachers')->insert([
             'name' => $this->faker->name,
             'class_leader' => $this->faker->numberBetween(1, 11),
-            'photo_id' => rand(1, 10),
+            'image_id' => rand(1, 10),
             'created_at'=>$this->faker->dateTime,
             'updated_at'=>$this->faker->dateTime
         ]);

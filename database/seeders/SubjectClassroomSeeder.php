@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ClassroomSubjectSeeder extends Seeder
+class SubjectClassroomSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,9 @@ class ClassroomSubjectSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('classroom_subject')->insert([
-                'classroom_id' => $i,
-                'subject_id' => $i
+            DB::table('subject_classroom')->insert([
+                'subject_id' => $i,
+                'classroom_id' => $i
             ]);
         }
     }
