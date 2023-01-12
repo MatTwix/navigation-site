@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Teacher;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class TeachersController extends Controller
@@ -29,7 +30,11 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        return view('admin.teachers.create');
+        $subjects = Subject::all();
+
+        return view('admin.teachers.create', [
+            'subjects' => $subjects
+        ]);
     }
 
     /**
@@ -40,8 +45,9 @@ class TeachersController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('name', 'class_leader', 'photo_id');
+        $data = $request->only('name', 'class_leader', 'image_id');
         $new_teacher = Teacher::create($data);
+        $new_teacher->subjects()->attach($request->input('subjects'));
 
         return $new_teacher 
             ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно добавлена')
@@ -67,8 +73,11 @@ class TeachersController extends Controller
      */
     public function edit(Teacher $teacher)
     {
+        $subjects = Subject::all();
+
         return view('admin.teachers.edit', [
-            'teacher' => $teacher
+            'teacher' => $teacher,
+            'subjects' => $subjects
         ]);
     }
 
@@ -81,10 +90,11 @@ class TeachersController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        $data = $request->only('name', 'class_leader', 'photo_id');
+        $data = $request->only('name', 'class_leader', 'image_id');
         $updated_teacher = $teacher->fill($data)->save();
+        $updated_subject = $teacher->subjects()->sync($request->input('subjects'));
 
-        return $updated_teacher 
+        return $updated_teacher && $updated_subject
             ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно добавлена')
             : back()->withErrors('Не удалось добавить запись')->withInput();
     }

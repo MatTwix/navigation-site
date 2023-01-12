@@ -4,6 +4,11 @@
     @csrf
     <input type="text" name="name" value="{{ $teacher->name }}">
     <input type="text" name="class_leader" value="{{ $teacher->class_leader }}">
-    <input type="text" name="photo_id" value="{{ $teacher->photo_id }}">
+    <select name="subjects[]" multiple>
+        @foreach ($subjects as $subject)
+            <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+        @endforeach
+    </select>
+    <input type="text" name="image_id" value="{{ $teacher->image_id }}">
     <button type="submit">Готово</button>
 </form>

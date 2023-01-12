@@ -5,6 +5,15 @@
     <input type="text" name="name" value="{{ $classroom->name }}">
     <input type="text" name="number" value="{{ $classroom->number }}">
     <input type="text" name="way_to" value="{{ $classroom->way_to }}">
-    <input type="text" name="owner_id" value="{{ $classroom->owner_id }}">
+    <select name="owner_id">
+        @foreach ($teachers as $teacher)
+            <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+        @endforeach
+    </select>
+    <select name="subjects[]" multiple>
+        @foreach ($subjects as $subject)
+            <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+        @endforeach
+    </select>
     <button type="submit">Готово</button>
 </form>

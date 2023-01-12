@@ -11,11 +11,16 @@ class Teacher extends Model
 
     protected $fillable = [
         'name',
-        'photo_id',
+        'image_id',
         'class_leader'
     ];
 
     public function subjects() {
         return $this->belongsToMany(Subject::class);
+    }
+    
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
     }
 }

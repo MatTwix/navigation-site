@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
+use App\Models\Teacher;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
+use function PHPSTORM_META\map;
 
 class ClassroomsController extends Controller
 {
@@ -30,7 +34,13 @@ class ClassroomsController extends Controller
      */
     public function create()
     {
-        return view('admin.classrooms.create');
+        $teachers = Teacher::all();
+        $subjects = Subject::all();
+
+        return view('admin.classrooms.create', [
+            'teachers' => $teachers,
+            'subjects' => $subjects
+        ]);
     }
 
     /**
@@ -43,6 +53,7 @@ class ClassroomsController extends Controller
     {
         $data = $request->only('name', 'number', 'way_to', 'owner_id');
         $new_classroom = Classroom::create($data);
+        $new_classroom->subjects()->attach($request->input('subjects'));
 
         return $new_classroom 
             ? redirect()->route('admin.classrooms.index')->with('success', 'Запись успешно добавлена')
@@ -68,8 +79,13 @@ class ClassroomsController extends Controller
      */
     public function edit(Classroom $classroom)
     {
+        $teachers = Teacher::all();
+        $subjects = Subject::all();
+
         return view('admin.classrooms.edit', [
-            'classroom' => $classroom
+            'classroom' => $classroom,
+            'teachers' => $teachers,
+            'subjects' => $subjects
         ]);
     }
 
@@ -84,8 +100,9 @@ class ClassroomsController extends Controller
     {
         $data = $request->only('name', 'number', 'way_to', 'owner_id');
         $updated_classroom = $classroom->fill($data)->save();
+        $updated_subject = $classroom->subjects()->sync($request->input('subjects'));
 
-        return $updated_classroom
+        return $updated_classroom && $updated_subject
             ? redirect()->route('admin.classrooms.index')->with('success', 'Запись успешно изменена')
             : back()->withErrors('Не удалось изменить запись')->withInput();
     }
