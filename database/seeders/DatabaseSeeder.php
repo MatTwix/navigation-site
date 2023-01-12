@@ -33,9 +33,9 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call([
-            ClassroomImagesSeeder::class,
-            ClassroomSubjectsSeeder::class,
-            TeacherSubjectsSeeder::class
+            ClassroomImageSeeder::class,
+            ClassroomSubjectSeeder::class,
+            TeacherSubjectSeeder::class
         ]);
     }
 }
