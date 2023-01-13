@@ -2,12 +2,12 @@
 @foreach($teachers as $teacher)
     <hr>
 
-    <p>ID: {{ $teacher->id }}</p>
-    <p>Имя учителя: {{ $teacher->name }}</p>
-    <p>Классный руководитель класса: {{ $teacher->class_leader }}</p>
-    <p>Фотография учителя: {{ $teacher->image->path }}</p>
+    <p><b>ID:</b> {{ $teacher->id }}</p>
+    <p><b>Имя учителя:</b> {{ $teacher->name }}</p>
+    <p><b>Классный руководитель класса:</b> {{ $teacher->class_leader }}</p>
+    <p><b>Фотография учителя:</b> {{ $teacher->image->path }}</p>
     <div>
-        <p>Предметы, преподаваемые данным учителем: </p>
+        <b>Предметы, преподаваемые данным учителем:</b>
         @foreach ($teacher->subjects as $subject)
             <p>{{ $subject->name }}</p>
         @endforeach

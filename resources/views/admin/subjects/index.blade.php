@@ -2,16 +2,16 @@
 @foreach($subjects as $subject)
     <hr>
 
-    <p>ID: {{ $subject->id }}</p>
-    <p>Название: {{ $subject->name }}</p>
+    <p><b>ID:</b> {{ $subject->id }}</p>
+    <p><b>Название:</b> {{ $subject->name }}</p>
     <div>
-        <p>Учителя, которые ведут этот предмет:</p>
+        <b>Учителя, которые ведут этот предмет:</b>
         @foreach ($subject->teachers as $teacher)
             <p>{{ $teacher->name }}</p>
         @endforeach
     </div>
     <div>
-        <p>Кабинеты, предназначенные для ведения данного предмета:</p>
+        <b>Кабинеты, предназначенные для ведения данного предмета:</b>
         @foreach ($subject->classrooms as $classroom)
             <p>{{ $classroom->number }}</p>
         @endforeach

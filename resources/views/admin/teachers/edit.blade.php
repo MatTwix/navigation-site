@@ -2,13 +2,21 @@
 <form method="POST" action="{{ route('admin.teachers.update', $teacher) }}" enctype="multipart/form-data">
     @method('PUT')
     @csrf
-    <input type="text" name="name" value="{{ $teacher->name }}">
-    <input type="text" name="class_leader" value="{{ $teacher->class_leader }}">
-    <select name="subjects[]" multiple>
+    <label for="name">ФИО: </label>
+    <input type="text" name="name" id="image_id" value="{{ $teacher->name }}">
+    <br>
+    <label for="class_leader">Классный руководитель класса: </label>
+    <input type="text" name="class_leader" id="class_leader" value="{{ $teacher->class_leader }}">
+    <br>
+    <label for="subjects">Предметы, преподаваемые данным учителем:</label>
+    <select name="subjects[]" id="subjects" multiple>
         @foreach ($subjects as $subject)
             <option value="{{ $subject->id }}">{{ $subject->name }}</option>
         @endforeach
     </select>
-    <input type="text" name="image_id" value="{{ $teacher->image_id }}">
+    <br>
+    <label for="image_id">ID фотографии:</label>
+    <input type="text" name="image_id" id="image_id" value="{{ $teacher->image_id }}">
+    <br>
     <button type="submit">Готово</button>
 </form>
