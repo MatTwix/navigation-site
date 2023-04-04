@@ -22,6 +22,7 @@ class ClassroomSeeder extends Seeder
             'number' => $this->faker->numberBetween(100, 400),
             'way_to' => $this->faker->locale,
             'owner_id' => rand(1, 10),
+            'destination' => rand(0, 1),
             'created_at'=>$this->faker->dateTime,
             'updated_at'=>$this->faker->dateTime
         ]);

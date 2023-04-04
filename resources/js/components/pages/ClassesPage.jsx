@@ -1,62 +1,74 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useSelector} from "react-redux";
 import {classesSelectors} from "../redux/reducers/Classes/index";
-import {teachersSelectors} from "../redux/reducers/Teachers/index"
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
 const ClassesPage = () => {
-    const classesList = useSelector(classesSelectors.classesList);
+    // const classesList = useSelector(classesSelectors.classesList);
 
-    const studyClassesList = classesList.filter(item => item.destination === 1);
-    const serviceClassesList = classesList.filter(item => item.destination === 0);
+    const [studyClassesList, setStudyClassesList] = useState([]);
+    const [serviceRoomsList, setServiceRoomsList] = useState([]);
 
-    const path = '../../../../storage/app/public/images'
+    const fetchClassrooms = async() => {
+        await axios.get('http://localhost:8000/api/classrooms').then(({data}) => {
+            setStudyClassesList(data.data.filter(item => item.destination == 1));
+            setServiceRoomsList(data.data.filter(item => item.destination == 0));
+        });
+    }
 
-    const makePath = (dir, id) => `${path}/${dir}/${id}.jpg`
+    useEffect(() => {
+        fetchClassrooms();
+    }, []);
 
     return (
         <div>
             <h1>Classes</h1>
-            {studyClassesList.map(classroom => {
-                return (
-                    <div key={classroom.id}>
-                        <p>{classroom.name}</p>
-                        <p>{classroom.number}</p>
-                        {typeof classroom.photos === 'number'
-                            ? <img src={makePath(classroom.destination, classroom.photos)} alt="photo"/>
-                            : <div>{classroom.photos.map(photoId => {
+            { studyClassesList.length != 0 
+                ? studyClassesList.map(classroom => {
+                    return (
+                        <div key={classroom.id}>
+                            <p>{classroom.name}</p>
+                            <p>{classroom.number}</p>
+                            <p>{classroom.way_to}</p>
+                            <p>{classroom.owner.name}</p>
+                            <div>{classroom.images.map(image => {
                                 return (
-                                    <img src={makePath(classroom.destination, photoId)} alt="photo"/>
-                                )
-                            }) 
-                            } </div>
-                        }
-                        <Link to={`/classes/${classroom.id}`}>Watch more</Link>
-                        <hr/>
-                    </div>
-                )
-            })}
+                                    <div key={image.id}>
+                                        <p>{image.path}</p>
+                                    </div>
+                                );
+                            })}</div>
+                            <Link to={`/classes/${classroom.id}`}>Watch more</Link>
+                            <hr/>
+                        </div>
+                    )
+                })
+                : <p>Учебные классы отсутствуют</p>
+            }
             <h1>Service rooms</h1>
-            {serviceClassesList.map(serviceRoom => {
-                return (
-                    <div key={serviceRoom.id}>
-                        <p>{serviceRoom.name}</p>
-                        <p>{serviceRoom.number}</p>
-                        {typeof serviceRoom.photos === 'number'
-                            ? <img src={makePath(serviceRoom.destination, serviceRoom.photos)} alt="photo"/>
-                            : <div>{serviceRoom.photos.map(photoId => {
-                                    return (
-                                        <img src={makePath(serviceRoom.destination, photoId)} alt="photo"/>
-                                    )
-                                })
-                            } </div>
-                        }
-                        <br/>
-                        <Link to={`/classes/${serviceRoom.id}`}>Watch more</Link>
-                        <hr/>
-                    </div>
-                )
-            })}
+            { serviceRoomsList.length != 0 
+                ? serviceRoomsList.map(classroom => {
+                    return (
+                        <div key={classroom.id}>
+                            <p>{classroom.name}</p>
+                            <p>{classroom.number}</p>
+                            <p>{classroom.way_to}</p>
+                            <p>{classroom.owner.name}</p>
+                            <div>{classroom.images.map(image => {
+                                return (
+                                    <div key={image.id}>
+                                        <p>{image.path}</p>
+                                    </div>
+                                );
+                            })}</div>
+                            <Link to={`/classes/${classroom.id}`}>Watch more</Link>
+                            <hr/>
+                        </div>
+                    )
+                })
+                : <p>Cлужебные помещения отсутствуют</p>
+            }
         </div>
     );
 };

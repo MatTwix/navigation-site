@@ -1,12 +1,52 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 
-const HomePage = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad alias beatae blanditiis consectetur culpa cum dolor dolores ducimus eligendi eos est et hic illo in, incidunt inventore ipsam iste itaque maiores minus molestias nulla odio odit pariatur perferendis placeat possimus, quam quis quos reiciendis saepe sapiente sed totam ut vitae voluptatem! Ab at beatae dicta, doloribus eum ex expedita, illo impedit magnam quo repellat velit. Aspernatur, autem beatae cupiditate distinctio eveniet expedita illum nesciunt nobis odit quibusdam quisquam ratione recusandae rem tempore voluptates! Accusamus ad, aliquid asperiores assumenda aut cum cumque deleniti ducimus ea eaque esse et hic illum incidunt ipsam laborum magni molestiae nisi nostrum omnis optio, quae quidem quis reiciendis rem repellat reprehenderit sint, sunt veritatis voluptatum. A accusantium ad autem, consequuntur dignissimos dolores ducimus ea esse, eum expedita facilis fugiat illum in optio placeat porro sapiente sequi, voluptatem. A aut consequatur consequuntur corporis cum dolore dolorem dolores esse et expedita itaque, libero modi mollitia, nulla obcaecati omnis possimus quaerat quas quidem quod quos repellat tempore vel? Aliquam aperiam, asperiores aspernatur delectus deserunt eius eligendi est eum fugit harum illum laborum laudantium maxime molestias nesciunt numquam officiis, omnis placeat ratione recusandae repellendus repudiandae soluta, vel velit voluptatibus. Animi aspernatur, assumenda dolore ducimus eaque earum eligendi esse est, et eum eveniet exercitationem fuga harum id impedit inventore ipsam itaque minima modi officia pariatur placeat quibusdam quidem quos repellat repellendus reprehenderit sed tempore tenetur veniam voluptas voluptatem voluptates voluptatum! Doloribus eaque error laudantium maiores nemo nesciunt obcaecati possimus sunt. Aperiam aut dolor dolorum porro quisquam quos sit! A consectetur dolorum earum iure neque reiciendis sunt? Ad, atque, cum earum facere fugit ipsa minus molestias nemo nisi quo recusandae reprehenderit voluptatem voluptatum. Atque consectetur eius ipsa magni quam? Debitis dignissimos eaque hic ipsum numquam perspiciatis similique velit. Asperiores et laboriosam magni recusandae reprehenderit. Culpa, cum doloremque earum error facere facilis fugiat ipsa iste itaque mollitia qui ratione rem saepe sed, sit velit vitae voluptatibus. At expedita non, officiis placeat qui sequi? Aspernatur dolore fuga fugiat ipsa iusto saepe sunt. Dolore eaque et exercitationem, quidem recusandae reiciendis. Ab, ad adipisci amet autem consequatur cumque dolor inventore itaque libero molestias nisi possimus quam sunt vitae voluptatum. Adipisci aliquam, assumenda beatae deserunt ducimus facere harum in ipsa minima nemo non odio optio perferendis quibusdam, quis ratione, reprehenderit rerum temporibus ut vitae! Adipisci consequatur culpa cupiditate doloribus eligendi hic ipsam iste maxime nostrum odio officiis placeat quaerat quas ratione sapiente, vel vero voluptate. Accusantium deleniti dolor dolorum eaque hic inventore, iusto maiores nam placeat quisquam, ratione repellat sequi ullam! Adipisci eos explicabo id, maxime quibusdam quisquam? Accusamus architecto harum natus sequi tempore temporibus veniam? Alias, quia suscipit. Est, exercitationem, quo? A ad asperiores at beatae commodi consequatur consequuntur, dolores ducimus excepturi in ipsum, iste magnam molestiae omnis quidem quo reiciendis rem repellat repellendus ut? Adipisci assumenda autem commodi doloribus, eaque enim explicabo fugit hic illum ipsum iure iusto laudantium libero maxime nesciunt nisi nobis nostrum odio officia officiis optio perspiciatis quasi recusandae rem repudiandae sapiente sequi similique veritatis, vero voluptatibus! Eaque eligendi enim excepturi, exercitationem inventore, ipsam labore laborum modi necessitatibus ratione, sed vel voluptatum! Alias aliquam consequatur dolorum fuga laudantium odio temporibus vitae. Accusamus corporis culpa delectus deserunt doloribus ea eius et eveniet facilis illum ipsa minus, necessitatibus nobis, odit officiis perspiciatis placeat quas quidem reprehenderit soluta suscipit tenetur ut veritatis voluptas voluptatem. Ab adipisci debitis dolor doloribus maxime quae quam similique, sint soluta ullam? Consequuntur et laboriosam nemo quam quos. Ad consequatur culpa cumque, facere fugit impedit natus nobis omnis, optio quas quos saepe similique tempore veritatis vero. Accusamus architecto consequatur consequuntur cumque debitis delectus deserunt dicta dignissimos dolore dolorem dolorum eligendi esse eveniet ex expedita explicabo fuga illum impedit in, ipsam iste magnam maiores minima molestiae nihil numquam obcaecati pariatur perferendis repellendus reprehenderit rerum similique temporibus totam ullam veniam veritatis voluptatum. Deserunt ducimus eos facere magni neque quisquam reiciendis tenetur! Aspernatur cum eaque incidunt non quis, saepe vero. Accusantium commodi consequatur impedit laborum, molestiae molestias quam sequi sunt suscipit tempora ut?
-        </div>
-    );
-};
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh',
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    padding: theme.spacing(2),
+  },
+}));
+
+function HomePage() {
+  const classes = useStyles();
+
+  return (
+    <Box className={classes.root}>
+      <Typography variant="h1" component="h1" align="center">
+        Добро пожаловать на наш сайт для школьников!
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Здесь вы найдете множество полезных ресурсов для учебы и саморазвития.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Мы использовали библиотеку Material-UI для создания удобного и современного интерфейса сайта.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Вы можете легко найти нужный раздел и перейти к необходимой информации всего в несколько кликов.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Мы собрали для вас ссылки на интересные статьи, видеоуроки и тесты по различным предметам.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Также вы можете найти здесь информацию о профессиях и университетах, которые могут быть вам интересны.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Если у вас есть какие-либо вопросы или предложения по улучшению нашего сайта, пожалуйста, свяжитесь с нами через форму обратной связи.
+      </Typography>
+      <Typography variant="subtitle1" component="p" align="center">
+        Мы надеемся, что наш сайт поможет вам в учебе!
+      </Typography>
+    </Box>
+  );
+}
 
 export default HomePage;

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\SubjectController;
 use App\Http\Controllers\Api\ClassroomController;
 use App\Http\Controllers\Api\TeacherController;
 use Illuminate\Http\Request;
@@ -23,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResources([
     'classrooms' => ClassroomController::class,
     'teachers' => TeacherController::class,
+    'subjects' => SubjectController::class,
 ]);

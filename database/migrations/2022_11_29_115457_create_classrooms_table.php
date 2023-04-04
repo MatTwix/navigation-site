@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('number'); //number of classroom is string because of numbers like 332a, 220b itc
             $table->text('way_to');
+            $table->integer('destination');
             $table->foreignId('owner_id')->constrained('teachers');
             $table->timestamps();
         });
