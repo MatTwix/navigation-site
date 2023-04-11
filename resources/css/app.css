@@ -1,0 +1,18 @@
+.class-card {
+    max-width: 300px;
+    height: 300px;
+    overflow: auto;
+    transition: all 0.3s;
+}
+
+.class-card:hover {
+    transform: scale(1.05);
+}
+
+.class-card-media {
+    border-radius: 8px;
+}
+
+.class-card-link {
+    text-decoration: none;
+}

@@ -13,7 +13,8 @@ class Classroom extends Model
         'name',
         'number',
         'way_to',
-        'owner_id'
+        'owner_id',
+        'destination'
     ];
 
     public function images() {

@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import {useSelector} from "react-redux";
-import {classesSelectors} from "../redux/reducers/Classes/index";
-import {Link} from "react-router-dom";
+import ClassCard from '../components/ClassCard';
+import { Grid, makeStyles } from "@material-ui/core";
 import axios from 'axios';
 
 const ClassesPage = () => {
-    // const classesList = useSelector(classesSelectors.classesList);
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            marginTop: theme.spacing(4),
+            marginBottom: theme.spacing(4),
+            marginLeft: theme.spacing(2),
+            marginRight: theme.spacing(2),
+        }
+    }));
 
-    const [studyClassesList, setStudyClassesList] = useState([]);
-    const [serviceRoomsList, setServiceRoomsList] = useState([]);
+    const [classroomsList, setClassroomsList] = useState([]);
 
-    const fetchClassrooms = async() => {
-        await axios.get('http://localhost:8000/api/classrooms').then(({data}) => {
-            setStudyClassesList(data.data.filter(item => item.destination == 1));
-            setServiceRoomsList(data.data.filter(item => item.destination == 0));
+    const fetchClassrooms = async () => {
+        await axios.get('http://localhost:8000/api/classrooms').then(({ data }) => {
+            setClassroomsList(data.data);
         });
     }
 
@@ -21,54 +25,41 @@ const ClassesPage = () => {
         fetchClassrooms();
     }, []);
 
+    const classCategories = classroomsList.reduce(
+        (categories, classItem) => {
+            if (classItem.destination === 1) {
+                categories.classes.push(classItem);
+            } else if (classItem.destination === 0) {
+                classItem.subjects = [];
+                categories.serviceRooms.push(classItem);
+            }
+            return categories;
+        },
+        { classes: [], serviceRooms: [] }
+    );
+
+    const classesStyles = useStyles();
+
     return (
-        <div>
-            <h1>Classes</h1>
-            { studyClassesList.length != 0 
-                ? studyClassesList.map(classroom => {
-                    return (
-                        <div key={classroom.id}>
-                            <p>{classroom.name}</p>
-                            <p>{classroom.number}</p>
-                            <p>{classroom.way_to}</p>
-                            <p>{classroom.owner.name}</p>
-                            <div>{classroom.images.map(image => {
-                                return (
-                                    <div key={image.id}>
-                                        <p>{image.path}</p>
-                                    </div>
-                                );
-                            })}</div>
-                            <Link to={`/classes/${classroom.id}`}>Watch more</Link>
-                            <hr/>
-                        </div>
-                    )
-                })
-                : <p>Учебные классы отсутствуют</p>
-            }
-            <h1>Service rooms</h1>
-            { serviceRoomsList.length != 0 
-                ? serviceRoomsList.map(classroom => {
-                    return (
-                        <div key={classroom.id}>
-                            <p>{classroom.name}</p>
-                            <p>{classroom.number}</p>
-                            <p>{classroom.way_to}</p>
-                            <p>{classroom.owner.name}</p>
-                            <div>{classroom.images.map(image => {
-                                return (
-                                    <div key={image.id}>
-                                        <p>{image.path}</p>
-                                    </div>
-                                );
-                            })}</div>
-                            <Link to={`/classes/${classroom.id}`}>Watch more</Link>
-                            <hr/>
-                        </div>
-                    )
-                })
-                : <p>Cлужебные помещения отсутствуют</p>
-            }
+        <div className={classesStyles.root}>
+            <Grid container spacing={3}>
+                <Grid item xs={12}>
+                    <h1>Классы</h1>
+                </Grid>
+                {classCategories.classes.map((classItem, index) => (
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={`class-${index}`}>
+                        <ClassCard classItem={classItem} />
+                    </Grid>
+                ))}
+                <Grid item xs={12}>
+                    <h1>Служебные помещения</h1>
+                </Grid>
+                {classCategories.serviceRooms.map((classItem, index) => (
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={`service-room-${index}`}>
+                        <ClassCard classItem={classItem} />
+                    </Grid>
+                ))}
+            </Grid>
         </div>
     );
 };
