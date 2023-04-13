@@ -26,7 +26,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/classrooms', AdminClassroomsController::class);
     Route::resource('/teachers', AdminTeachersController::class);
     Route::resource('/subjects', AdminSubjectsController::class);
-    Route::resource('/images', ImageContoller::class);
 });
 
 Route::any('{any}', function () {
