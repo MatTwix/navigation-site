@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Teacher;
 use App\Models\Subject;
+use App\Services\TeacherImageUploadService;
 use Illuminate\Http\Request;
 
 class TeachersController extends Controller
@@ -43,11 +44,15 @@ class TeachersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, TeacherImageUploadService $upload)
     {
         $data = $request->only('name', 'class_leader', 'image_id');
         $new_teacher = Teacher::create($data);
         $new_teacher->subjects()->attach($request->input('subjects'));
+
+        if ($request->hasFile('image')) {
+            $upload->saveUploadedFile($request->file('image'), $new_teacher);
+        }
 
         return $new_teacher 
             ? redirect()->route('admin.teachers.index')->with('success', 'Запись успешно добавлена')
@@ -90,7 +95,7 @@ class TeachersController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        $data = $request->only('name', 'class_leader', 'image_id');
+        $data = $request->only('name', 'class_leader');
         $updated_teacher = $teacher->fill($data)->save();
         $updated_subject = $teacher->subjects()->sync($request->input('subjects'));
 

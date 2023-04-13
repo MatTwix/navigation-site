@@ -4,13 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 400,
+    height: 450,
     width: 300,
     margin: theme.spacing(2),
     overflow: 'auto', // добавляем возможность прокручивать содержимое
   },
   media: {
-    height: 200,
+    height: 250,
   },
 }));
 

@@ -7,7 +7,6 @@ import '../../../templates/assets/css/style.css'
 import ClassesPage from "./pages/ClassesPage";
 import ClassPage from "./pages/ClassPage";
 import TeachersPage from "./pages/TeachersPage";
-import TeacherPage from "./pages/TeacherPage";
 import SubjectsPage from "./pages/SubjectsPage";
 import SubjectPage from "./pages/SubjectPage"
 import {Provider} from "react-redux";
@@ -22,7 +21,6 @@ const App = () => {
                     <Route path={'/classes'} element={<ClassesPage />}/>
                     <Route path={'/classes/:id'} element={<ClassPage />}/>
                     <Route path={'/teachers'} element={<TeachersPage />}/>
-                    <Route path={'/teachers/:id'} element={<TeacherPage />}/>
                     <Route path={'/subjects'} element={<SubjectsPage />}/>
                     <Route path={'/subjects/:id'} element={<SubjectPage />}/>
                     <Route path={'*'} element={<NotFoundPage />}/>

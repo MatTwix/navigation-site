@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class TeachersResource extends JsonResource
 {
@@ -18,7 +19,7 @@ class TeachersResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'class_leader' => $this->class_leader,
-            'image' => $this->image->path,
+            'image' => Storage::url($this->image),
             'subjects' => SubjectsResource::collection($this->subjects)
         ];
     }

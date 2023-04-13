@@ -6,10 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Teacher;
 use App\Models\Subject;
+use App\Services\ClassroomImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
-use function PHPSTORM_META\map;
 
 class ClassroomsController extends Controller
 {
@@ -49,7 +48,7 @@ class ClassroomsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, ClassroomImageUploadService $upload)
     {
         $data = $request->only('name', 'number', 'way_to', 'owner_id', 'destination');
         $new_classroom = Classroom::create($data);
@@ -57,7 +56,7 @@ class ClassroomsController extends Controller
         $new_classroom->images()->attach($request->input('images'));
 
         if ($request->hasFile('images')) {
-            
+            $upload->saveUploadedFile($request->file('images'), $new_classroom);
         }
 
         return $new_classroom 
@@ -101,12 +100,16 @@ class ClassroomsController extends Controller
      * @param  Classroom  $classroom
      * @return Response
      */
-    public function update(Request $request, Classroom $classroom)
+    public function update(Request $request, Classroom $classroom, ClassroomImageUploadService $upload)
     {
+
         $data = $request->only('name', 'number', 'way_to', 'owner_id', 'destination');
         $updated_classroom = $classroom->fill($data)->save();
         $updated_subject = $classroom->subjects()->sync($request->input('subjects'));
-        $updated_subject = $classroom->subjects()->sync($request->input('images'));
+
+        if($request->hasFile('images')) {
+            $upload->saveUploadedFile($request->file('images'), $classroom);
+        }
 
         return $updated_classroom && $updated_subject
             ? redirect()->route('admin.classrooms.index')->with('success', 'Запись успешно изменена')

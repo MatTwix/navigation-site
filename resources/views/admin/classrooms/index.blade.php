@@ -15,7 +15,7 @@
     <div>
         <b>Фотографии класса: </b>
         @foreach ($classroom->images as $image)
-            <p>{{ $image->path }}</p>
+            <img src={{ Storage::url($image->path) }} alt="" heigth='100px' width='100px'>
         @endforeach
     </div>
 

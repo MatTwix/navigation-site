@@ -23,22 +23,15 @@
         @endforeach
     </select>
     <br>
-    <label for="images">Фотографии класса:</label>
-    <select name="images[]" id="images" multiple required>
-        @foreach ([1,2,3] as $image)
-            <option value="{{ $image }}">{{ $image }}</option>
-        @endforeach
-    </select>
-    <br>
     <label for="subjects">Предметы, преподаваемые в этом классе:</label>
-    <select name="subjects[]" id="subjects" multiple required>
+    <select name="subjects[]" id="subjects" multiple>
         @foreach ($subjects as $subject)
             <option value="{{ $subject->id }}">{{ $subject->name }}</option>
         @endforeach
     </select>
     <br>
     <label for="images">Фотографии класса:</label>
-    <input type="file" name="images[]" id="images" accept=".jpg, .jpeg, .png" multiple>
+    <input type="file" name="images[]" id="images" accept=".jpg, .jpeg, .png" multiple required>
     <br>
     <button type="submit">Готово</button>
 </form>

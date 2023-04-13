@@ -24,19 +24,21 @@
         @endforeach
     </select>
     <br>
-    <label for="images">Фотографии класса:</label>
-    <select name="images[]" id="images" multiple>
-        @foreach ([1,2,3] as $image)
-            <option value="{{ $image }}">{{ $image }}</option>
-        @endforeach
-    </select>
-    <br>
     <label for="subjects">Предметы, преподаваемые в этом классе:</label>
     <select name="subjects[]" id="subjects" multiple>
         @foreach ($subjects as $subject)
             <option value="{{ $subject->id }}">{{ $subject->name }}</option>
         @endforeach
     </select>
+    <br>
+    <label for="images">Фотографии класса:</label>
+    @foreach ($classroom->images as $image)
+        <div>
+            <img src={{ Storage::url($image->path) }} alt="img" heigth='100px' width='100px'>
+        </div>
+    @endforeach
+    <br>
+    <input type="file" name="images[]" id="images" accept=".jpg, .jpeg, .png" multiple>
     <br>
     <button type="submit">Готово</button>
 </form>

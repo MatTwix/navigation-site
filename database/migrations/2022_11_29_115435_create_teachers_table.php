@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('class_leader')->nullable();
-            $table->foreignId('image_id')->constrained('images')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

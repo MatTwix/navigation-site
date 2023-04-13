@@ -11,7 +11,7 @@ class Teacher extends Model
 
     protected $fillable = [
         'name',
-        'image_id',
+        'image',
         'class_leader'
     ];
 

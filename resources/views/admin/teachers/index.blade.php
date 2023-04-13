@@ -5,7 +5,7 @@
     <p><b>ID:</b> {{ $teacher->id }}</p>
     <p><b>Имя учителя:</b> {{ $teacher->name }}</p>
     <p><b>Классный руководитель класса:</b> {{ $teacher->class_leader }}</p>
-    <p><b>Фотография учителя:</b> {{ $teacher->image->path }}</p>
+    <p><b>Фотография учителя: <img src={{ Storage::url($teacher->image) }} alt={{ $teacher->image ?? "img" }} height='100px' width='100px'>
     <div>
         <b>Предметы, преподаваемые данным учителем:</b>
         @foreach ($teacher->subjects as $subject)

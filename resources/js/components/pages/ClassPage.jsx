@@ -1,8 +1,8 @@
-import React, { useState, useEffect }from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {Typography, Grid, Paper, ButtonBase} from '@material-ui/core';
-import Carousel from 'react-material-ui-carousel'; 
+import { Typography, Grid, Paper, Box } from '@material-ui/core';
+import Carousel from 'react-material-ui-carousel';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,10 +36,17 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         maxWidth: '100%',
         maxHeight: '100%',
+        borderRadius: '50%',
     },
     carousel: {
+        marginTop: theme.spacing(3),
         marginBottom: theme.spacing(4),
     },
+    carouselImage: {
+        width: '100%',
+        height: '100%',
+        borderRadius: '10px 10px 10px 10px'
+    }
 }));
 
 const ClassPage = () => {
@@ -58,61 +65,63 @@ const ClassPage = () => {
     useEffect(() => {
         fetchClassroom();
     }, []);
-    
-    const { name, number, way_to, owner, subjects, images } = classroom;
-    
+
+    const { name, number, way_to, owner, subjects, images, destination } = classroom;
+
     const classesStyles = useStyles();
 
     return classroom.length != 0
-    ? (
-        <div className={classesStyles.root}>
-            <Paper className={classesStyles.paper}>
-                <Grid container spacing={2}>
-                    <Grid item>
-                        <ButtonBase className={classesStyles.image}>
-                            <img
-                                className={classesStyles.img}
-                                alt="class"
-                                src={owner.image}
-                            />
-                        </ButtonBase>
-                    </Grid>
-                    <Grid item xs={12} sm container>
-                        <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs>
-                                <Typography gutterBottom variant="h4">
-                                    {name}
-                                </Typography>
-                                <Typography variant="h5" gutterBottom>
-                                    {number}
-                                </Typography>
-                                <Typography variant="body1" gutterBottom>
-                                    {way_to}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {owner.name}
-                                </Typography>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="body1" gutterBottom>
-                                    Subjects:
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {subjects.map((s) => s.name).join(', ')}
-                                </Typography>
+        ? (
+            <div className={classesStyles.root}>
+                <Paper className={classesStyles.paper}>
+                    <Grid container spacing={2}>
+                        <Grid item>
+                            <Box className={classesStyles.image}>
+                                <img
+                                    className={classesStyles.img}
+                                    alt="class"
+                                    src={owner.image}
+                                />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12} sm container>
+                            <Grid item xs container direction="column" spacing={2}>
+                                <Grid item xs>
+                                    <Typography gutterBottom variant="h4">
+                                        {name}
+                                    </Typography>
+                                    <Typography variant="h5" gutterBottom>
+                                        {number}
+                                    </Typography>
+                                    <Typography variant="body1" gutterBottom>
+                                        {way_to}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {owner.name}
+                                    </Typography>
+                                </Grid>
+                                {destination === 1 && (
+                                    <Grid item>
+                                        <Typography variant="body1" gutterBottom>
+                                            Предметы:
+                                        </Typography>
+                                        <Typography variant="body2" color="textSecondary">
+                                            {subjects.map((s) => s.name).join(', ')}
+                                        </Typography>
+                                    </Grid>
+                                )}
                             </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
-                <Carousel className={classesStyles.carousel}>
-                    {images.map((image) => (
-                        <img key={image.id} src={image.path} alt={name} />
-                    ))}
-                </Carousel>
-            </Paper>
-        </div>
-    )
-    : ( <p>Такого класса нет</p> );
+                    <Carousel className={classesStyles.carousel}>
+                        {images.map((image) => (
+                            <img key={image.id} src={image.path} alt={name} className={classesStyles.carouselImage} />
+                        ))}
+                    </Carousel>
+                </Paper>
+            </div>
+        )
+        : (<p>Такого класса нет</p>);
 };
 
 export default ClassPage;
